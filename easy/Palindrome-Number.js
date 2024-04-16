@@ -1,16 +1,15 @@
-var isPalindrome = function (x) {
+isPalindrome = function (x) {
     let forward = x.toString().split('').map(Number)
-    let backword = forward.reverse()
-    let ItsTrue
-    for (let u = 0; u < forward.length; u++) {
-        for (let e = 0; e < backword.length; e++) {
-            if (forward[u] === backword[e]) {
-                return true
-            }
-        }
-        ItsTrue = true
-    }
-    return ItsTrue
+    let backword = forward.slice().reverse()
+    let forwardNumber = forward.join('')
+    let backwordNumber = backword.join('')
+    let isPalindrome
+    if (isNaN(forward[0]) || backword[0] == 0) return console.log(false)
+    if (forwardNumber === backwordNumber) isPalindrome = true
+    console.log(isPalindrome)
 };
-console.log(isPalindrome(121))
-console.log(isPalindrome(-121))
+isPalindrome(-121)
+isPalindrome(141)
+isPalindrome(11)
+isPalindrome(10)
+
