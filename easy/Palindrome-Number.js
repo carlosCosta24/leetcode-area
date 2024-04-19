@@ -11,5 +11,5 @@ isPalindrome = function (x) {
 isPalindrome(-121)
 isPalindrome(141)
 isPalindrome(11)
-isPalindrome(10)
+isPalindrome(0)
 
