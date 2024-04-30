@@ -4,28 +4,19 @@ let romanToInt = (s) => {
 
 
     for (o = 0; o < s.length; o++) {
-
-        let current = symbols[s[o]]
-        let next = symbols[s[o + 1]]
-        if (current === undefined) {
-            console.log('please enter a valid symbol \'I, V, X, L, C, D, M\' ')
-            return
-        }
-
-        else if (next !== undefined && current < next) {
-            result += next - current
-            o++
+        let current = s[o]
+        let next = s[o + 1]
+        if (symbols[current] < symbols[next]) {
+            result -= symbols[current]
         } else {
-            result += current
+            result += symbols[current]
         }
-
-        result += current
-
     }
     console.log(result)
+
     return result
 
 
 };
 
-romanToInt("iii")
+romanToInt("III")
